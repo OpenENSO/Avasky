@@ -1,5 +1,22 @@
-# Avasky
+# Avasky - BETA
 
-Our service aims at creating a decentralized identity manager, enabling you to seamlessly link your activites under one profile. Using magic links for passwordless login and Skynet webportals for storing your profile and making it easy for you to share it.
+---
 
-This program is currently in beta. Further versions include the development of a blockchain powered eID.
+
+Our service aims at creating a skill/activity verification platform as well a means to establish access to resources with passwordless logins via Magic Links.
+
+Current BETA program also aims at creating short profiles that you can share via skylinks.
+
+This is a proof of concept.
+
+## What are Skylinks?
+
+---
+
+We are using a decentralized CDN platform called Skynet ( powered by Sia ) for storage of profile pages. This is done by assigning each profile with a skylink.
+
+## Magic Links
+
+---
+
+Magic Links offer an SDK for 'passwordless logins'. The service allows you to authenticate via email by verifying a certain link, as well as implement social and WebAuthn logins.
