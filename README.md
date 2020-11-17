@@ -3,7 +3,7 @@
 ---
 
 
-Our service aims at creating a skill/activity verification platform as well a means to establish access to resources with passwordless logins via Magic Links.
+Our service is a skill/activity verification platform as well as a means to establish access to resources with passwordless logins via Magic Links.
 
 Current BETA program also aims at creating short profiles that you can share via skylinks.
 
