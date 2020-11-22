@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Avasky</title>
+    <meta name="description" content="One solution to decentralized verification and resource access.">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/F19537---MySkills.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
+    <script>
+      /* Initialize Magic Instance */
+      let magic = new Magic("pk_test_8C88C54907A66015");
+
+      /* Implement Render Function */
+      const render = async () => {
+        const isLoggedIn = await magic.user.isLoggedIn();
+
+        /* Show login form if user is not logged in */
+		
+        let html = `
+          
+		  <div class="login-dark">
+        <form style="margin: 0px;" onsubmit="handleLogin(event)">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="assets/img/avaskyicon.png" style="height: 195px;"></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: #51cf7c;">SIGN UP</button></div><a class="forgot" href="index.html">&lt;- Back</a></form>
+    </div>
+        `;
+		
+		/* Check if user is logged in, then grab email and set interface */
+        if (isLoggedIn) {
+          /* Get user metadata including email */
+          const userMetadata = await magic.user.getMetadata();
+		  
+          html = `
+            
+		<div class="col-lg-3 offset-lg-2"><img class="bg-white border rounded" src="assets/img/avaskylogo.png" style="height: 70px;padding: 0px;margin: 8px;"></div>
+		<hr style="background: #1ccd19;">
+		<div class="bg-dark border rounded container">
+			<h1>SKILLS FOR:&nbsp; ${userMetadata.email}</h1>
+				<p>Golang</p>
+        <div class="skills-container">
+            <div class="skills html"><span>86%</span></div>
+        </div>
+        <p>Flutter</p>
+        <div class="skills-container">
+            <div class="skills css"><span>72%</span></div>
+        </div>
+        <p>JavaScript</p>
+        <div class="skills-container">
+            <div class="skills js"><span>60%</span></div>
+        </div>
+        <p>SkyDB</p>
+        <div class="skills-container">
+            <div class="skills php"><span>56%</span></div>
+        </div>
+		</div>
+		<hr style="background: #1ccd19;">
+            <button onclick="handleLogout()">Logout</button>
+          `;
+        }
+
+        document.getElementById("app").innerHTML = html;
+      };
+
+      /* Implement Login Handler */
+	  
+      const handleLogin = async (e) => {
+        e.preventDefault();
+        const email = new FormData(e.target).get("email");
+        if (email) {
+          /* One-liner login */
+          await magic.auth.loginWithMagicLink({ email });
+          render();
+        }
+      };
+
+      /* Implement Logout Handler */
+	  
+      const handleLogout = async () => {
+        await magic.user.logout();
+        render();
+      };
+    </script>
+</head>
+
+<body onload="render()">
+    <div id="app">
+	Loading...
+	</div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    
+</body>
+
+</html>
