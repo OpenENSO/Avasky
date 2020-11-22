@@ -11,8 +11,9 @@ Link to application: [Avasky](https://siasky.net/_AqGzaTwRceBAsG6OF29Koa3hIWJv66
 
 ---
 
-We are using a decentralized CDN platform called Skynet ( powered by Sia ) for storage. As an example, we created a skapp called Skydrop, an add-on
-for the Avasky service which enables quick content sharing via skylinks.
+We are using a decentralized CDN platform called Skynet ( powered by Sia ) for storage and extended decentralized functionalities. As an example, we created a skapp called Skydrop, an add-on for the Avasky service which enables quick content sharing via skylinks.
+
+The SDK empowered us to easily connect our application to Skynet and make use of a reliable and responsive platform.
 
 
 ## Magic Links
