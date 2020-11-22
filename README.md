@@ -31,4 +31,3 @@ Avasky is an extensible, straightforward, customizable service for anyone seekin
 We kept the clutter away from the UI to deliver a fluid experience, focused on both user and business!
 
 This project was created with awesomeness by the OpenENSO team for the SkyDB Debut Hackathon !
----Motanovici :)
