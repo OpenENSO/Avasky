@@ -2,6 +2,8 @@
 
 ---
 
+Video DEMO ( on Skynet of course :) ) -> [Video Demo](https://siasky.net/AAC9PH7f7Z63rL2UGEIE7vnkqVrIbsCZKGZlA5AzDPcZAQ)
+
 Our service enables your business(or even your personal project!) to create passwordless, yet secure login methods to your resources by the use of Magic Links. This technology
 further allows us to provide a means of verifying work/skill in a decentralized way, adding all these to a profile.
 
