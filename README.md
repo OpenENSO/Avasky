@@ -9,6 +9,8 @@ further allows us to provide a means of verifying work/skill in a decentralized 
 
 Link to application: [Avasky](https://siasky.net/_AqGzaTwRceBAsG6OF29Koa3hIWJv66hZMpJY6E_aGJ0oA/)
 
+Updated 'Profiles' version: https://siasky.net/_AFsJsvZW3PrMNuQH8nC3EuIJdj3hmc1HU-iMkxhDanG5g/index.html
+
 ## What are Skylinks?
 
 ---
