@@ -4,12 +4,10 @@
 
 Video DEMO ( on Skynet of course :) ) -> [Video Demo](https://siasky.net/AAC9PH7f7Z63rL2UGEIE7vnkqVrIbsCZKGZlA5AzDPcZAQ)
 
-Our service enables your business(or even your personal project!) to create passwordless, yet secure login methods to your resources by the use of Magic Links. This technology
-further allows us to provide a means of verifying work/skill in a decentralized way, adding all these to a profile.
+Our service enables your business or personal project to grant passwordless, yet secure access to resources, as well as providing a way to get verified and create a unique link between your account and an application, thus allowing for a proof of work without betraying privacy.
 
-Link to application: [Avasky](https://siasky.net/_AqGzaTwRceBAsG6OF29Koa3hIWJv66hZMpJY6E_aGJ0oA/)
+Link to application: [Avasky](https://siasky.net/_AFsJsvZW3PrMNuQH8nC3EuIJdj3hmc1HU-iMkxhDanG5g/)
 
-Updated 'Profiles' version: https://siasky.net/_AFsJsvZW3PrMNuQH8nC3EuIJdj3hmc1HU-iMkxhDanG5g/index.html
 
 ## What are Skylinks?
 
@@ -28,6 +26,12 @@ Magic Links offer an SDK for 'passwordless logins'. The service allows you to au
 
 We use this service to authenticate users and grant access to specific resources given this information. The application is fully customizable and the UI as well UX
 are kept at the same level of friendliness and fluidity.
+
+## BrightID
+
+---
+
+BrightID allows us to implement a decentralized verification capability to Avasky, all while maintaining privacy. It does so by creating 'deep links' between your account and the application currently registered on BrightID node operators. You get verified by other users and by participating in meetings, thus adding a human experience to the app.
 
 ## Further details
 
