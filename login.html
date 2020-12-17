@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Avasky Login</title>
-    <meta name="description" content="One solution to decentralized verification and resource access.">
+    <meta name="description" content="Decentralized solution to verification and resource access using Magic Links, BrightID and Skynet+SkyID">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
@@ -25,9 +25,9 @@
         const isLoggedIn = await magic.user.isLoggedIn();
 
         /* Show login form if user is not logged in */
-		
+
         let html = `
-          
+
 		<div class="login-dark">
         <form onsubmit="handleLogin(event)" style="margin: 0px;">
             <h2 class="sr-only">Login Form</h2>
@@ -39,19 +39,19 @@
 		</div>
         `;
 
-        
+
 
         document.getElementById("app").innerHTML = html;
       };
 
       /* Implement Login Handler */
-	  
+
       const handleLogin = async (e) => {
         e.preventDefault();
         const email = new FormData(e.target).get("email");
         if (email) {
           /* One-liner login */
-          await magic.auth.loginWithMagicLink({ 
+          await magic.auth.loginWithMagicLink({
 			email,
 			redirectURI: 'https://siasky.net/_AE85qV8kEbLqYbXF0ZOhRKU2Q_4XD_MwPSrTdEQM_-PNw/'
 		  });
@@ -59,16 +59,16 @@
         }
       };
 
-      
+
     </script>
 </head>
 
 <body onload="render()">
-	
+
 	<div id="app">
 	Loading...
 	</div>
-	
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -76,7 +76,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/grayscale.js"></script>
-    
+
 </body>
 
 </html>
