@@ -5,7 +5,7 @@
 
 Avasky is a gateway to other services. One can think of it as a hub or, as we like to call it, a decentralized workstation. You can use it to setup your project/business resources and grant access to all via one account, which is created using SkyID. To make sure the user is using one account and is verified as a truly unique human, we have setup BrightID integration, which links services to one identity. BrightID is a privacy-friendly service which can verify the identity and human status of a user without betraying confidentiality. Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
-Link to application: [Avasky](https://siasky.net/_AFsJsvZW3PrMNuQH8nC3EuIJdj3hmc1HU-iMkxhDanG5g/)
+Link to application: [Avasky](https://siasky.net/_AFUn1nWCQhALKlWSThUPig_AwEbYvNMACA8zS7cIis7Wg/)
 
 ## BrightID
 
