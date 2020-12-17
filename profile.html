@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/LinkedIn-like-Profile-Box.css">
+    <link rel="stylesheet" href="assets/css/skyidlog.css">
 
 </head>
 
@@ -33,7 +34,7 @@
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
-                <div class="col-lg-6 offset-lg-6"><button class="btn btn-primary border rounded" type="button" style="width: 268px;" id="authbtn" onclick="auth()">SkyID Auth</button></div>
+                <div class="col-lg-6 offset-lg-6"><button class="skyid-button button-blow big-margin" type="button" style="width: 268px;" onclick="skyid.sessionStart()" id="authbt">SkyID Auth</button></div>
             </div>
         </div>
     </nav>
@@ -57,7 +58,7 @@
                         <p style="font-size: 14px;height: 0px;"><strong>Connected services:</strong></p>
                         <ol start="Skydrop" style="font-size: 13px;background: rgba(255,255,255,0.26);">
                             <li>Skydrop - unlinked</li>
-                            <li>Avasky - linked</li>
+                            <li id='cApp2'>Avasky - unlinked</li>
                             <li id='cApp'>Gitcoin - unlinked</li>
                         </ol>
                     </div>
@@ -125,7 +126,7 @@
                                      const response = await fetch(url);
                                      const data = await response.json();
                                      const status = document.getElementById('vStatus');
-                                     status.innerHTML = "Verified on BrightID";
+                                     status.innerHTML = "Unverified on BrightID";
                                      const cApp = document.getElementById('cApp');
                                      cApp.innerHTML = 'Gitcoin - linked';
                                      const verifBar = document.getElementById('verifBar');
@@ -134,8 +135,7 @@
                                      linkBar.innerHTML = '66.6%';
 
                                    } catch ( err ) {
-                                     const status = document.getElementById('vStatus');
-                                     status.innerHTML = 'Unverified on BrightID';
+                                     console.log("Error during verification!");
                                    }
 
 
@@ -181,7 +181,6 @@
     <script>
 
 
-    var opts = { 'devMode': devMode  }
     var skyid = new SkyID('Avasky', skyidEventCallback)
 
     function skyidEventCallback(message) {
@@ -190,7 +189,10 @@
 			        console.log('Login failed')
 			           break;
 		       case 'login_success':
-			        console.log('Login succeed!')
+			           const profile = document.getElementById('authbt');
+                 const service = document.getElementById('cApp2');
+                 profile.innerHTML="Logged in!";
+                 service.innerHTML="Avasky - linked";
 			           break;
 		       case 'destroy':
 			        console.log('Logout succeed!')
@@ -198,8 +200,8 @@
 		      default:
 			       console.log(message)
 			          break;
-	}
-}
+	     }
+     }
 
     </script>
     <script src="assets/js/jquery.min.js"></script>
