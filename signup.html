@@ -23,169 +23,20 @@
     <link rel="stylesheet" href="assets/css/LinkedIn-like-Profile-Box.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
     <link rel="stylesheet" href="assets/css/Multi-step-form.css">
-	<script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
-    <script>
-		
-		
-      /* Initialize Magic Instance */
-      let magic = new Magic("pk_test_8C88C54907A66015");
 
-      /* Implement Render Function */
-      const render = async () => {
-        const isLoggedIn = await magic.user.isLoggedIn();
-
-        /* Show login form if user is not logged in */
-		
-        let html = `
-          
-		  <div class="login-dark">
-        <form style="margin: 0px;" onsubmit="handleLogin(event)">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><img src="assets/img/avaskyicon.png" style="height: 195px;"></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: #51cf7c;">SIGN UP</button></div><a class="forgot" href="index.html">&lt;- Back</a></form>
-    </div>
-        `;
-		
-		/* Check if user is logged in, then grab email and set interface */
-        if (isLoggedIn) {
-          /* Get user metadata including email */
-          const userMetadata = await magic.user.getMetadata();
-		  
-          html = `
-            
-		<div class="col-lg-3 offset-lg-0"><img class="bg-white border rounded" src="assets/img/avaskylogo.png" style="height: 70px;padding: 0px;margin: 8px;"></div>
-    <hr style="background: #1ccd19;">
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-success" style="text-shadow: 0px 0px 20px rgb(251,252,251);">YOUR HANDY AVA PROFILE</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-lg-3 offset-lg-0">
-                    <div class="text-center border rounded border-primary shadow-sm profile-box" style="width: 200px;height: 300px;margin: 5px;color: rgb(4,4,4);background: #514646;">
-                        <div style="height: 50px;background-image: url(&quot;assets/img/bg-pattern.png&quot;);background-color: rgba(54,162,177,0);"></div>
-                        <div><img class="rounded-circle" src="assets/img/avaskyicon.png" width="60px" height="60px" style="background-color: rgb(255,255,255);padding: 2px;"></div>
-                        <div style="height: 80px;">
-                            <h6 style="color: rgb(40,167,69);">${userMetadata.email}</h6>
-                            <p style="font-size: 14px;color: rgb(40,167,69);">Unverified on BrightID</p>
-                        </div>
-                        <p style="font-size: 14px;height: 0px;"><strong>Connected services:</strong></p>
-                        <ol start="Skydrop" style="font-size: 13px;background: rgba(255,255,255,0.26);">
-                            <li>Skydrop - linked</li>
-                            <li>Avasky - linked</li>
-                            <li>1hive - unlinked</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <h4>AVA SCORE</h4>
-                    <div class="progress">
-                        <div class="progress-bar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">10%</div>
-                    </div>
-                    <p>Verified?</p>
-                    <div class="progress">
-                        <div class="progress-bar" aria-valuenow="66.6" aria-valuemin="0" aria-valuemax="100" style="width: 66.6%;">66.6%</div>
-                    </div>
-                    <p>Linked</p>
-                </div>
-                <div class="col-md-4 offset-lg-1" style="height: 360px;">
-                    <div class="container">
-                        <h6>Brightid connect</h6>
-                        <div class="flip-card" style="width: 230px;height: 230px;">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front"><img class="rounded" src="assets/img/brightid.png" alt="Avatar" width="300px" height="300px" style="width: 230px;height: 230px;"></div>
-                                <div class="flip-card-back" style="color: var(--light);background: rgb(9,10,10);">
-                                    <h4>Connect</h4>
-                                    <p>1hive -&nbsp;<a id="lnk1" href="brightid://link-verification/http://node.brightid.org/1hive/abc">connect</a></p>
-                                    <p>Gitcoin -&nbsp;<a id="lnk2" href="brightid://link-verification/http://node.brightid.org/gitcoin/abc">connect</a>&nbsp;</p>
-                                    <p>Discord -&nbsp;<a id="lnk3" href="brightid://link-verification/http://node.brightid.org/discord/abc">connect</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr style="background: #1ccd19;">
-    <div class="card" style="color: var(--dark);">
-        <div class="card-header" style="color: var(--dark);background: #111010;border-color: #000000;">
-            <h3 style="color: var(--light);border-color: var(--dark);background: rgba(3,3,3,0);">GOOD DEEDS</h3>
-        </div>
-        <div class="card-body" style="height: 233px;background: #070606;">
-            <ul class="list-group">
-                <li class="list-group-item" style="margin-bottom: 6px;background: rgba(248,246,246,0);">
-                    <div class="media">
-                        <div></div>
-                        <div class="media-body">
-                            <div class="media" style="overflow:visible;">
-                                <div><img class="mr-3" style="width: 25px; height:25px;" src="assets/img/brightid.png"></div>
-                                <div class="media-body" style="overflow:visible;">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p style="color: var(--cyan);"><a href="https://github.com/CrissElena">Chris:</a>&nbsp;Good co-worker, focused on the task and always ready to help.&nbsp;<br>
-<small class="text-muted" style="color: var(--cyan);">December 9, 2020 @ 12:15 p.m.</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul><button class="btn btn-dark" style="margin-left:601px;margin-top:-9px;" type="button">Add Comment</button>
-        </div>
-    </div>
-          `;
-        }
-
-        document.getElementById("app").innerHTML = html;
-      };
-
-      /* Implement Login Handler */
-	  
-      const handleLogin = async (e) => {
-        e.preventDefault();
-        const email = new FormData(e.target).get("email");
-        if (email) {
-          /* One-liner login */
-          await magic.auth.loginWithMagicLink({ email });
-          render();
-        }
-      };
-
-      /* Implement Logout Handler */
-	  
-      const handleLogout = async () => {
-        await magic.user.logout();
-        render();
-      };
-	  
-	 function uuidv4() {
-			return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-				var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-				return v.toString(16);
-			});
-		}
-		
-    </script>
 </head>
 
-<body onload="render()">
-    <div id="app">
-	Loading...
-	</div>
-	
-	
+<body>
+
+	  
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/grayscale.js"></script>
-    
+
 </body>
 
 </html>
