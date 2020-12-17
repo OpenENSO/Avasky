@@ -3,7 +3,7 @@
 ---
 
 
-Avasky is a gateway to other services. One can think of it as a hub or, as we like to call it, a decentralized workstation. You can use it to setup your project/business resources and grant access to all via one account, which is created using 3box profiles. To make sure the user is using one account and is verified as a truly unique human, we have setup BrightID integration, which links services to one identity. BrightID is a privacy-friendly service which can verify the identity and human status of a user without betraying confidentiality. Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
+Avasky is a gateway to other services. One can think of it as a hub or, as we like to call it, a decentralized workstation. You can use it to setup your project/business resources and grant access to all via one account, which is created using SkyID. To make sure the user is using one account and is verified as a truly unique human, we have setup BrightID integration, which links services to one identity. BrightID is a privacy-friendly service which can verify the identity and human status of a user without betraying confidentiality. Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
 Link to application: [Avasky](https://siasky.net/_AFsJsvZW3PrMNuQH8nC3EuIJdj3hmc1HU-iMkxhDanG5g/)
 
@@ -21,10 +21,9 @@ We are using a decentralized storage platform called Skynet ( powered by Sia ) f
 
 The SDK empowered us to easily connect our application to Skynet and make use of a reliable and responsive platform.
 
-## 3box Profiles
+## SkyID
 
-We are using the 3box service to authenticate users and create a profile for them. By using 3box, a decentralized service itself, we ensure that Avasky stays true to this ethos.
-It also enables us to add extra functionality such as profile data, comments and storage.
+We chose SkyID for authenticating the user and run the service under the banner of one account. It is fully compatible with other applications built on Skynet and allows further extensions such as: comments and storage. It also helps us keep true to our ethos of a decentralized service. By using SkyID, we also enable our service with dID.
 
 ## Magic Links
 
@@ -66,9 +65,10 @@ Details: the link, once clicked, calls the 'uuid4' function for generating a con
 
 ## TODO
 
-1. Enable full profile sync, setup storage and communication using 3box
+1. Enable full profile sync, setup storage and communication using SkyID and Skynet.
 2. Enlist Avasky add-ons to BrightID node operators and integrate sponsorships.
 3. Enable email filters for the 'LOGIN' capability.
+4. Enforce better verification for BrightID.
 
 ## Further details and vision
 
