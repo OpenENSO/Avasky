@@ -125,14 +125,25 @@
                                    try {
                                      const response = await fetch(url);
                                      const data = await response.json();
-                                     const status = document.getElementById('vStatus');
-                                     status.innerHTML = "Unverified on BrightID";
-                                     const cApp = document.getElementById('cApp');
-                                     cApp.innerHTML = 'Discord - linked';
-                                     const verifBar = document.getElementById('verifBar');
-                                     verifBar.innerHTML = '10%';
-                                     const linkBar = document.getElementById('linkBar');
-                                     linkBar.innerHTML = '66.6%';
+				     if ( data.unique == "true"){
+					     const status = document.getElementById('vStatus');
+					     status.innerHTML = "Verified on BrightID";
+					     const cApp = document.getElementById('cApp');
+					     cApp.innerHTML = 'Discord - linked';
+					     const verifBar = document.getElementById('verifBar');
+					     verifBar.innerHTML = '100%';
+					     const linkBar = document.getElementById('linkBar');
+					     linkBar.innerHTML = '66.6%';
+				     } else {
+					     const status = document.getElementById('vStatus');
+					     status.innerHTML = "Unverified on BrightID";
+					     const cApp = document.getElementById('cApp');
+					     cApp.innerHTML = 'Discord - linked';
+					     const verifBar = document.getElementById('verifBar');
+					     verifBar.innerHTML = '0%';
+					     const linkBar = document.getElementById('linkBar');
+					     linkBar.innerHTML = '66.6%'; 
+				     }
 
                                    } catch ( err ) {
                                      console.log("Error during verification!");
