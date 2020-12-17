@@ -56,12 +56,12 @@ const handleLogin = async (e) => {
 ```
 Once the 'redirectURI' has been changed, the user will automatically get redirected to your custom service.
 
-2. The 'PROFILE' page of Avasky is used to first authenticate a user with the help of a 3box profile. If the user doesn't have one, the service will create one automatically.
-It also makes sure to sync the profile data and deliver them should that be the need. (Needs integration and testing)
+2. The 'PROFILE' page of Avasky is used to authenticate a user with the help of SkyID and see basic information about their accounts. We have also offered the following features: A BrightID verification system ( explained below ) - the user hovers over the logo and a QR code is there for scanning. Once finished, the user can click on the 'Get verified' functionality in order to update their profile.
 
-3. To verify their uniqueness and connected service, the user hovers over the logo and will be presented with a link. Once clicked, it will generate a QR code to scan which opens the BrightID app. Then their verification status is queried, returning either a 'Verified' or 'Not verified' title on their profile page, as well as the application which has been linked to their account.
+3. To verify their uniqueness and connected services, the user can scan a QR code which will redirect them to the BrightID mobile app for approval. This is done by first assigning a contextID ( using uuidv4 ) and generate a deep link with it. This link is, in turn, encoded as a QR code using the QRious JS library.
 
-Details: the link, once clicked, calls the 'uuid4' function for generating a contextID. This, in turn, gets sent to the 'deep link' and gets encoded as a QR to scan.
+4. The 'RESOURCES' page of Avasky can be used to get access to custom domains via the use of Magic Links. Provide an email and accept the link - you will automatically get redirected to the default add-on for Avasky: Skydrop.
+
 
 ## TODO
 
@@ -69,6 +69,7 @@ Details: the link, once clicked, calls the 'uuid4' function for generating a con
 2. Enlist Avasky add-ons to BrightID node operators and integrate sponsorships.
 3. Enable email filters for the 'LOGIN' capability.
 4. Enforce better verification for BrightID.
+5. Save profiles to a skylink, allowing the user to share or update it. Setup BrightID profiles.
 
 ## Further details and vision
 
