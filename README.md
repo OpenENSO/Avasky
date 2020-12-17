@@ -5,17 +5,17 @@
 
 Avasky is a gateway to other services. One can think of it as a hub or, as we like to call it, a decentralized workstation. You can use it to setup your project/business resources and grant access to all via one account, which is created using SkyID. To make sure the user is using one account and is verified as a truly unique human, we have setup BrightID integration, which links services to one identity. BrightID is a privacy-friendly service which can verify the identity and human status of a user without betraying confidentiality. Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
-Link to application: [Avasky](https://siasky.net/_AFUn1nWCQhALKlWSThUPig_AwEbYvNMACA8zS7cIis7Wg/)
+Link to application: [Avasky](https://siasky.net/_AHq4sJ27VwL4f8g0yQL6Xh6-HkhVjN6o7KsGkDjwrwFCg/)
 
 ## BrightID
 
----
+
 
 BrightID allows us to add a decentralized verification capability to Avasky, all while maintaining privacy. It does so by creating 'deep links' between your account and the application currently registered on BrightID node operators. You get verified by other users by participating in meetings, thus adding a human experience to the app. This is a far better ( far more reliable ) solution to the usual and very annoying 'captcha'. Not only this, but it is a handy way to integrate multiple services and keep track of all under the banner of one account. 
 
 ## What are Skylinks?
 
----
+
 
 We are using a decentralized storage platform called Skynet ( powered by Sia ) for storage and extended decentralized functionalities. As an example, we created a skapp called Skydrop, an add-on for the Avasky service which enables quick content sharing via skylinks.
 
@@ -23,11 +23,11 @@ The SDK empowered us to easily connect our application to Skynet and make use of
 
 ## SkyID
 
-We chose SkyID for authenticating the user and run the service under the banner of one account. It is fully compatible with other applications built on Skynet and allows further extensions such as: comments and storage. It also helps us keep true to our ethos of a decentralized service. By using SkyID, we also enable our service with dID.
+We chose SkyID for authenticating the user and run the service under the banner of one account. It is fully compatible with other applications built on Skynet and allows further extensions such as comments and storage. It also helps us keep true to our ethos of a decentralized service as it enables us with dID and ensures interoperability with other applications.
 
 ## Magic Links
 
----
+
 
 Magic Links offer an SDK for 'passwordless logins'. The service allows you to authenticate via email by verifying a certain link, as well as implement social and WebAuthn logins.
 
