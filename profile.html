@@ -59,18 +59,18 @@
                         <ol start="Skydrop" style="font-size: 13px;background: rgba(255,255,255,0.26);">
                             <li>Skydrop - unlinked</li>
                             <li id='cApp2'>Avasky - unlinked</li>
-                            <li id='cApp'>Gitcoin - unlinked</li>
+                            <li id='cApp'>Discord - unlinked</li>
                         </ol>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
                     <h4>AVA SCORE</h4>
                     <div class="progress">
-                        <div id="verifBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">10%</div>
+                        <div id="verifBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">0%</div>
                     </div>
                     <p>Verified?</p>
                     <div class="progress">
-                        <div id="linkBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">33.3%</div>
+                        <div id="linkBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">0%</div>
                     </div>
                     <p>Linked</p>
 
@@ -128,9 +128,9 @@
                                      const status = document.getElementById('vStatus');
                                      status.innerHTML = "Unverified on BrightID";
                                      const cApp = document.getElementById('cApp');
-                                     cApp.innerHTML = 'Gitcoin - linked';
+                                     cApp.innerHTML = 'Discord - linked';
                                      const verifBar = document.getElementById('verifBar');
-                                     verifBar.innerHTML = '100%';
+                                     verifBar.innerHTML = '10%';
                                      const linkBar = document.getElementById('linkBar');
                                      linkBar.innerHTML = '66.6%';
 
@@ -193,6 +193,8 @@
                  const service = document.getElementById('cApp2');
                  profile.innerHTML="Logged in!";
                  service.innerHTML="Avasky - linked";
+                 const linkBar = document.getElementById('linkBar');
+                 linkBar.innerHTML = '33.3%';
 			           break;
 		       case 'destroy':
 			        console.log('Logout succeed!')
