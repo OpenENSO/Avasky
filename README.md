@@ -11,6 +11,8 @@ Furthermore, we shall explain each service being used, as well as their function
 
 Link to application: [Avasky](https://siasky.net/_AGAipVa9cj5uTHZIGTlbJum05N_ghmBlKFy_yiW93EMVQ/)
 
+Video DEMO ( For BrightID ) : [Demo video](https://www.loom.com/share/aa7b0535360f42b0b5ea5a94f87a5a8f)
+
 ## BrightID
 
 
