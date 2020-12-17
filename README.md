@@ -5,7 +5,7 @@
 
 Avasky is a gateway to other services. One can think of it as a hub or, as we like to call it, a decentralized workstation. You can use it to setup your project/business resources and grant access to all via one account, which is created using SkyID. To make sure the user is using one account and is verified as a truly unique human, we have setup BrightID integration, which links services to one identity. BrightID is a privacy-friendly service which can verify the identity and human status of a user without betraying confidentiality. Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
-Link to application: [Avasky](https://siasky.net/_AHq4sJ27VwL4f8g0yQL6Xh6-HkhVjN6o7KsGkDjwrwFCg/)
+Link to application: [Avasky](https://siasky.net/_AF7aKb5aLGVLP2B1oLlGL_Z-FOG_HV0CH3oxs4wpMorjg/)
 
 ## BrightID
 
@@ -75,6 +75,6 @@ Once the 'redirectURI' has been changed, the user will automatically get redirec
 
 Avasky is an extensible, straightforward, customizable gateway for anyone seeking to give their project or business an easy manner of authentication and providing human uniqueness. 
 
-We aim to make Avasky as adaptable as possible, capable of being tailored to the needs of any project, all while keeping a clutterless UI and fluid UX, focused both on user and business. Of course, we do not forget our principles: keeping it decentralized ( 3box & Skynet), clean ( Magic Links ) and human-friendly ( BrightID ).
+We aim to make Avasky as adaptable as possible, capable of being tailored to the needs of any project, all while keeping a clutterless UI and fluid UX, focused both on user and business. Of course, we do not forget our principles: keeping it decentralized ( SkyID & Skynet), human-friendly ( BrightID ) and seamless ( Magic Links ).
 
 This project was created with love and care by Motanovici, an year III student of CS. Submission project for the : Build with BrightID and SkyDB Debut hackathons!
