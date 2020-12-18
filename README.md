@@ -76,10 +76,11 @@ Once the 'redirectURI' has been changed, the user will automatically get redirec
 3. Enable email filters for the 'LOGIN' capability.
 4. Enforce better verification for BrightID.
 5. Save profiles to a skylink, allowing the user to share or update it. Setup BrightID profiles.
+6. Enable 2 user to connect via BrightID.
 
 ## Further details and vision
 
-Avasky is an extensible, straightforward, customizable gateway for anyone seeking to give their project or business an easy manner of authentication and providing human uniqueness. 
+Avasky is an extensible, straightforward, customizable gateway for anyone seeking to give their project or business an easy manner of authentication and providing human uniqueness.
 
 We aim to make Avasky as adaptable as possible, capable of being tailored to the needs of any project, all while keeping a clutterless UI and fluid UX, focused both on user and business. Of course, we do not forget our principles: keeping it decentralized ( SkyID & Skynet), human-friendly ( BrightID ) and seamless ( Magic Links ).
 
