@@ -5,7 +5,7 @@
 
 Avasky is a decentralized and customizable gateway. You can use it to setup your project or business resources and grant access to all via one account, which is created using SkyID, a dID solution powered by Sia. To make sure the user is using one account and is verified as a truly unique human, we have added BrightID support, which links services to one identity.
 
-BrightID is a privacy-friendly service which can verify the identity and non-Jarvis status of a user without betraying confidentiality, thus adding a truly human experience to the app.
+BrightID is a privacy-friendly social identity network which can verify the uniqueness and non-Jarvis status of a user without betraying the confidentiality of their data.
 
 Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
