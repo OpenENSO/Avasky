@@ -5,7 +5,7 @@
 
 Avasky is a decentralized and customizable gateway. You can use it to setup your project or business resources and grant access to all via one account, which is created using SkyID, a dID solution powered by Sia. To make sure the user is using one account and is verified as a truly unique human, we have added BrightID support, which links services to one identity.
 
-BrightID is a privacy-friendly service which can verify the identity and non-robot status of a user without betraying confidentiality, thus adding a truly human experience to the app.
+BrightID is a privacy-friendly service which can verify the identity and non-Jarvis status of a user without betraying confidentiality, thus adding a truly human experience to the app.
 
 Furthermore, we shall explain each service being used, as well as their functionality and how to replicate those actions.
 
@@ -17,7 +17,7 @@ Video DEMO ( For BrightID ) : [Demo video](https://www.loom.com/share/aa7b053536
 
 
 
-BrightID allows us to add a decentralized verification capability to Avasky, all while maintaining privacy. It does so by creating 'deep links' between your account and the application currently registered on BrightID node operators. You get verified by other users by participating in meetings and as such, a far more reliable and human connection is being established. This is a far better solution to the usual and very annoying 'captcha'. Not only this, but it is a handy way to integrate multiple services and keep track of all under the banner of one account. 
+BrightID allows us to add a decentralized verification capability to Avasky, all while maintaining privacy. It does so by creating 'deep links' between your account and the application currently registered on BrightID node operators. You get verified by other users by participating in meetings and as such, a far more reliable and human connection is being established. This is a far better solution to the usual and very annoying 'captcha'. Not only this, but it is a handy way to integrate multiple services and keep track of all under the banner of one account.
 
 ## What are Skylinks?
 
@@ -72,11 +72,12 @@ Once the 'redirectURI' has been changed, the user will automatically get redirec
 ## TODO
 
 1. Enable full profile sync, setup storage and communication using SkyID and Skynet.
-2. Enlist Avasky add-ons to BrightID node operators and integrate sponsorships.
+2. Enlist Avasky & add-ons to BrightID node operators and integrate sponsorships.
 3. Enable email filters for the 'LOGIN' capability.
 4. Enforce better verification for BrightID.
 5. Save profiles to a skylink, allowing the user to share or update it. Setup BrightID profiles.
-6. Enable 2 user to connect via BrightID.
+6. Enable 2 users to connect via BrightID - IN PROGRESS via BrightID issue related to making the signing keys portable
+7. Add more capabilities via BrightID Node API.
 
 ## Further details and vision
 
