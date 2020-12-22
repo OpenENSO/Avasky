@@ -4,79 +4,76 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Avasky Login</title>
-    <meta name="description" content="Decentralized solution to verification and resource access using Magic Links, BrightID and Skynet+SkyID">
+    <title>Avasky</title>
+    <meta name="description" content="Decentralized solution to verification and resource access using BrightID">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/F19537---MySkills.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
     <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-    <script src="https://cdn.jsdelivr.net/npm/magic-sdk/dist/magic.js"></script>
-    <script>
-      /* Initialize Magic Instance */
-      let magic = new Magic("pk_test_8C88C54907A66015");
-
-      /* Implement Render Function */
-      const render = async () => {
-        const isLoggedIn = await magic.user.isLoggedIn();
-
-        /* Login form if user is not logged in */
-
-        let html = `
-
-		<div class="login-dark">
-        <form onsubmit="handleLogin(event)" style="margin: 0px;">
-            <h2 class="sr-only">Login Form</h2>
-            <div class="illustration">
-				<img src="assets/img/avaskyicon.png" style="height: 195px;">
-			</div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background: #51cf7c;">LOGIN</button></div><a class="forgot" href="index.html">&lt;- Back</a></form>
-		</div>
-        `;
-
-
-
-        document.getElementById("app").innerHTML = html;
-      };
-
-      /* Login Handler */
-
-      const handleLogin = async (e) => {
-        e.preventDefault();
-        const email = new FormData(e.target).get("email");
-        if (email) {
-          /* One-liner login */
-          await magic.auth.loginWithMagicLink({
-			email,
-			redirectURI: 'https://siasky.net/_AE85qV8kEbLqYbXF0ZOhRKU2Q_4XD_MwPSrTdEQM_-PNw/'
-		  });
-          render();
-        }
-      };
-
-
-    </script>
+    
 </head>
 
-<body onload="render()">
-
-	<div id="app">
-	Loading...
-	</div>
-
-
+<body>
+    <div class="login-dark" style="background: url(&quot;assets/img/Brightid-verify-bg.png&quot;);">
+        <form class="border rounded-0" style="margin: 0px;background: rgb(255,255,255);">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="assets/img/brightid.png" style="height: 195px;"></div>
+            <div class="form-group"><input class="form-control" type="text" name="brightid" placeholder="ContextID" style="color: rgb(0,0,0);" id="bright" readonly/></div>
+            <div class="form-group">
+                <hr><button class="btn btn-primary btn-block border rounded-pill" style="background: rgb(255,155,63);text-align: center;margin: 3px;width: 239px;" onclick="verify()">I AM A HUMAN!</button>
+            </div><a class="forgot" href="index.html">&lt;- Back</a>
+        </form>
+    </div>
+	<script>
+	
+	var ctxid = sessionStorage.getItem("ctxId");
+	document.getElementById("bright").value = ctxid;
+	
+	var brid = sessionStorage.getItem("brid");	
+	
+	// checks if there any associated verifications
+	async function verify() {
+		url = 'https://app.brightid.org/node/v5/users/' + ctxid + '/verifications';
+		const res = await fetch(url);
+		const data = await res.json();
+		
+		
+		
+		url2 = "https://app.brightid.org/node/v5/users/" + brid
+									 
+		const response_verif = await fetch(url2);
+		const data2 = await response_verif.json();
+		
+		if (data2.data.verifications.length > 0) {
+			console.log("I am in the first");
+			window.location.href = "https://siasky.net/_AE85qV8kEbLqYbXF0ZOhRKU2Q_4XD_MwPSrTdEQM_-PNw/";
+			
+		} else if(data.data.verifications.length == 0){
+			console.log("second");
+			alert("You are not verified, Jarvis :(");
+		} else {
+			alert("Something went wrong...*awkward silence*");
+		}
+	}
+	
+	
+	
+	</script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="assets/js/grayscale.js"></script>
-
+    
+    
 </body>
 
 </html>

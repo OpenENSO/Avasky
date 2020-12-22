@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/LinkedIn-like-Profile-Box.css">
-    <link rel="stylesheet" href="assets/css/skyidlog.css">
+    
 
 </head>
 
@@ -34,16 +34,30 @@
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
                 </ul>
-                <div class="col-lg-6 offset-lg-6"><button class="skyid-button button-blow big-margin" type="button" style="width: 268px;" onclick="skyid.sessionStart()" id="authbt">SkyID Auth</button></div>
+                
             </div>
         </div>
     </nav>
     <hr style="background: #1ccd19;">
+	<div class="card border rounded" style="background: rgb(0,0,0);">
+    <div class="card-body border rounded-0">
+        <h4 class="card-title">BRIGHTID SOCIAL</h4>
+        <h6 class="text-muted card-subtitle mb-2">Type your brightid BELOW</h6>
+        <div class="input-group">
+            <div class="input-group-prepend"><span class="border rounded-pill input-group-text" style="height: 38px;">ID</span></div><input type="text" class="border rounded-pill form-control" id="brid"/>
+            <div class="input-group-append"><button class="btn btn-primary border rounded-pill" type="button" style="background: rgb(220,140,66);color: rgb(255,255,255);" onclick="getUserData()">SOCIAL WITH BRIGHTID</button></div>
+        </div>
+		<p id="nocn">Number of connections: </p>
+		<p id="trust">Trusted BrightIDs: <br></p>
+		<p id="score">Score: </p>
+    </div>
+	</div>
+	<hr style="background: #1ccd19;" />
     <div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-success" style="text-shadow: 0px 0px 20px rgb(251,252,251);">YOUR HANDY AVA PROFILE</h2>
+                    <h2 class="text-success" style="text-shadow: 0px 0px 20px rgb(251,252,251);">YOUR HANDY AVASKY PROFILE</h2>
                 </div>
             </div>
             <div class="row">
@@ -52,29 +66,38 @@
                         <div style="height: 50px;background-image: url(&quot;assets/img/bg-pattern.png&quot;);background-color: rgba(54,162,177,0);"></div>
                         <div><img class="rounded-circle" src="assets/img/avaskyicon.png" width="60px" height="60px" style="background-color: rgb(255,255,255);padding: 2px;"></div>
                         <div style="height: 80px;">
-                            <h6 style="color: rgb(40,167,69);"></h6>
+                            <h6 class="text-break" style="color: rgb(40,167,69);font-size: 10px;margin: 10px;" id="user"></h6>
                             <p style="font-size: 14px;color: rgb(40,167,69);" id="vStatus"></p>
                         </div>
                         <p style="font-size: 14px;height: 0px;"><strong>Connected services:</strong></p>
                         <ol start="Skydrop" style="font-size: 13px;background: rgba(255,255,255,0.26);">
                             <li>Skydrop - unlinked</li>
                             <li id='cApp2'>Avasky - unlinked</li>
-                            <li id='cApp'>Discord - unlinked</li>
+                            <li id='cApp'>Gitcoin - unlinked</li>
                         </ol>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-4">
-                    <h4>AVA SCORE</h4>
+                    <h4>AVA TRUST SCORE ( beta )</h4>
                     <div class="progress">
-                        <div id="verifBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">0%</div>
+                        <div id="verifBar" class="progress-bar bg-dark" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">JARVIS</div>
                     </div>
-                    <p>Verified?</p>
+                    <p>JARVIS STATUS</p>
                     <div class="progress">
-                        <div id="linkBar" class="progress-bar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">0%</div>
+                        <div id="linkBar" class="progress-bar bg-dark" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">0%</div>
                     </div>
-                    <p>Linked</p>
+                    <p>LINKED</p>
 
-                    <button class="btn btn-dark border rounded" type="button" style="text-align: center;margin: 3px;" onclick="queryVerification(uuidv4())">GET VERIFIED</button>
+                    <button class="btn btn-dark border rounded-pill" type="button" style="text-align: center;margin: 3px;background: rgb(220,140,66);" onclick="queryVerification()">GET LINKED</button>
+					<button class="btn btn-dark border rounded-pill" type="button" style="text-align: center;margin: 3px;background: rgb(220,140,66);" onclick="getSponsorships()">SPONSORSHIPS</button>
+					<br />
+					<sub id="sp">Sponsorship status</sub>
+					<sub>
+					 <br />
+					  <strong> TIP: First connect with BrightID, check 'SPONSORSHIPS' and then click 'Get Linked'</strong>
+					  <br />
+					  <br />
+					</sub>
                 </div>
                 <div class="col-md-4 offset-lg-1" style="height: 360px;">
                     <div class="container">
@@ -88,71 +111,7 @@
 
                                     <p><a href="#" onclick="generateQRCode();return false;" id="qrgen"></a>&nbsp;</p>
                                 </div>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-                                <script>
-
-                                // generate contextID
-
-                                function uuidv4() {
-                                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                                        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-                                        return v.toString(16);
-                                      });
-                                    }
-                                    // generate QR code for given contextID
-                                  var qr;
-                                  (function(){
-                                    qr = new QRious({
-                                      element: document.getElementById('brightid'),
-                                      size: 200,
-                                      value: "https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Discord/" + uuidv4()
-                                    });
-                                  })();
-
-                                 function generateQRCode() {
-                                   var qrtext = "https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Discord/" + uuidv4();
-                                   qr.set({
-                                     foreground:'black',
-                                     size: 200,
-                                     value: qrtext
-                                   });
-                                 }
-
-                                 // verify the status
-                                 // TODO: stricter verification conditions
-                                 async function queryVerification(contextID) {
-                                   url = "https://app.brightid.org/node/v5/verifications/Discord/" + contextID;
-                                   try {
-                                     const response = await fetch(url);
-                                     const data = await response.json();
-				     if ( data.unique == "true"){
-					     const status = document.getElementById('vStatus');
-					     status.innerHTML = "Verified on BrightID";
-					     const cApp = document.getElementById('cApp');
-					     cApp.innerHTML = 'Discord - linked';
-					     const verifBar = document.getElementById('verifBar');
-					     verifBar.innerHTML = '100%';
-					     const linkBar = document.getElementById('linkBar');
-					     linkBar.innerHTML = '66.6%';
-				     } else {
-					     const status = document.getElementById('vStatus');
-					     status.innerHTML = "Unverified on BrightID";
-					     const cApp = document.getElementById('cApp');
-					     cApp.innerHTML = 'Discord - linked';
-					     const verifBar = document.getElementById('verifBar');
-					     verifBar.innerHTML = '0%';
-					     const linkBar = document.getElementById('linkBar');
-					     linkBar.innerHTML = '66.6%'; 
-				     }
-
-                                   } catch ( err ) {
-                                     console.log("Error during verification!");
-                                   }
-
-
-                                 }
-
-                                </script>
+                                
                             </div>
                         </div>
                     </div>
@@ -161,6 +120,8 @@
         </div>
     </div>
     <hr style="background: #1ccd19;">
+	
+	
     <div class="card" style="color: var(--dark);">
         <div class="card-header" style="color: var(--dark);background: #111010;border-color: #000000;">
             <h3 style="color: var(--light);border-color: var(--dark);background: rgba(3,3,3,0);">GOOD DEEDS</h3>
@@ -188,33 +149,142 @@
             </ul>
         </div>
     </div>
-    <script src="https://sky-id.hns.siasky.net/skyid.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
 
+                                // generate contextID
 
-    var skyid = new SkyID('Avasky', skyidEventCallback)
+                                function uuidv4() {
+                                    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                                        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                                        return v.toString(16);
+                                      });
+                                 }
+								 
+                                // generate QR code for given contextID
+								var contextid = uuidv4();
+								
+								sessionStorage.setItem("ctxId",contextid);
+								
+                                var qr;
+                                  (function(){
+                                    qr = new QRious({
+                                      element: document.getElementById('brightid'),
+                                      size: 200,
+                                      value: "https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Gitcoin/" + contextid
+                                    });
+                                  })();
+								
+								
+                                function generateQRCode() {
+                                   var qrtext = "https://app.brightid.org/link-verification/http:%2f%2fnode.brightid.org/Gitcoin/" + contextid;
+								   
+                                   qr.set({
+                                     foreground:'black',
+                                     size: 200,
+                                     value: qrtext
+                                   });
+                                 }
+								
 
-    function skyidEventCallback(message) {
-	     switch (message) {
-		       case 'login_fail':
-			        console.log('Login failed')
-			           break;
-		       case 'login_success':
-			           const profile = document.getElementById('authbt');
-                 const service = document.getElementById('cApp2');
-                 profile.innerHTML="Logged in!";
-                 service.innerHTML="Avasky - linked";
-                 const linkBar = document.getElementById('linkBar');
-                 linkBar.innerHTML = '33.3%';
-			           break;
-		       case 'destroy':
-			        console.log('Logout succeed!')
-			           break;
-		      default:
-			       console.log(message)
-			          break;
-	     }
-     }
+								
+                                 // verify the status
+                                 
+                                 async function queryVerification() {
+                                   url = "https://app.brightid.org/node/v5/verifications/Gitcoin/" + contextid;
+                                   try {
+                                     const response = await fetch(url);
+                                     const data = await response.json();
+									 
+									 var brid = document.getElementById("brid").value;
+									 sessionStorage.setItem("brid",brid);
+									
+								     url2 = "https://app.brightid.org/node/v5/users/" + brid
+									 
+									 const response_verif = await fetch(url2);
+									 const data2 = await response_verif.json();
+									 
+									 if(data.unique == true || data2.data.verifications.length > 0){
+										const status = document.getElementById('vStatus');
+										status.innerHTML = "Verified on BrightID";
+										
+										const cApp = document.getElementById('cApp');
+										cApp.innerHTML = "Gitcoin - linked";
+										
+										const verifBar = document.getElementById('verifBar');
+										verifBar.innerHTML = 'HUMAN';
+										
+										const linkBar = document.getElementById('linkBar');
+										linkBar.innerHTML = '33.3%';
+									 } else if ( data.code = '404' ){
+									 
+										 const status = document.getElementById('vStatus');
+										 status.innerHTML = "Unverified on BrightID";
+										 
+										 const cApp = document.getElementById('cApp');
+										 cApp.innerHTML = 'Gitcoin - linked';
+										 
+										 const verifBar = document.getElementById('verifBar');
+										 verifBar.innerHTML = 'JARVIS';
+										 
+										 const linkBar = document.getElementById('linkBar');
+										 linkBar.innerHTML = '33.3%';
+									 } else {
+										alert("Error");
+									 }
+                                   } catch ( err ) {
+                                     alert("Error during verification!");
+                                   }
+
+
+                                 }
+								 
+								 // check if user is sponsored or not
+								 
+								 async function getSponsorships() {
+								 
+								   var brid = document.getElementById("brid").value;
+									
+								   url = "https://app.brightid.org/node/v5/users/" + brid;
+								   const res = await fetch(url);
+								   const data = await res.json();
+								   const sp = document.getElementById('sp');
+								   
+								   if(data.data.isSponsored == true){
+										sp.innerHTML = "User is sponsored. We can check you :)";
+								   }else{
+										sp.innerHTML = "User is not sponsored. Cannot verify."
+								   }
+								 }
+								 
+								 // get data from user to display for social feature
+								 
+								 async function getUserData() {
+									var brid = document.getElementById("brid").value;
+									document.getElementById("user").innerHTML = brid;
+									url = "https://app.brightid.org/node/v5/users/" + brid;
+									const res = await fetch(url);
+									const data = await res.json();
+									// add number of connections
+									
+									var no_con = data.data.connections.length;
+									document.getElementById("nocn").innerHTML += no_con;
+									
+									// add trusted BrightIDs
+									var trustedid = data.data.trusted;
+									var i;
+									var trustid_form = document.getElementById("trust");
+									for(i=0;i<trustedid.length;i++){
+										trustid_form.innerHTML += trustedid[i] + "<br>";
+									}
+									
+									// display score
+									
+									var score = data.data.score;
+									document.getElementById("score").innerHTML += score;
+									
+									
+								 }
 
     </script>
     <script src="assets/js/jquery.min.js"></script>
