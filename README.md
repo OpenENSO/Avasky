@@ -3,7 +3,7 @@
 ---
 
 
-Avasky is a decentralized and customizable gateway. You can use it to setup your project or business resources and grant access to all via one account, which is created using SkyID, a dID solution powered by Sia. To make sure the user is using one account and is verified as a truly unique human, we have added BrightID support, which links services to one identity.
+Avasky is a decentralized and customizable gateway/workstation. You can use it to setup your project or business resources and grant access to all via one account, which is created using SkyID, a dID solution powered by Sia. To make sure the user is using one account and is verified as a truly unique human, we have added BrightID support, which links services to one identity.
 
 BrightID is a privacy-friendly social identity network which can verify the uniqueness and non-Jarvis status of a user without betraying the confidentiality of their data.
 
@@ -11,7 +11,7 @@ Furthermore, we shall explain each service being used, as well as their function
 
 Link to application: [Avasky](https://siasky.net/_AGAipVa9cj5uTHZIGTlbJum05N_ghmBlKFy_yiW93EMVQ/)
 
-Video DEMO ( For BrightID ) : [Demo video](https://www.loom.com/share/aa7b0535360f42b0b5ea5a94f87a5a8f)
+Video DEMO ( For BrightID ) : [Demo video]()
 
 ## BrightID
 
