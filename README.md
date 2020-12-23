@@ -40,6 +40,8 @@ Once you are verified you will gain access to these resources.
 
 2. The 'PROFILE' page of Avasky is used to allow the user to view their social stamp on the network and see basic information about their accounts. We have also offered the following features: A BrightID verification system ( explained below ) - the user hovers over the logo and a QR code is there for scanning. Once finished, the user can click on the 'Get linked' functionality in order to update their profile.
 
+**TIP** : Your BrightID can be found by accessing the following portal: [BrightID Explore](https://explorer.brightid.org/). You can then go ahead and login using BrightID credentials, after which you will be shown your BrightID and place in the huge social graph of the network.
+
 3. To verify their uniqueness and connected services, the user can scan a QR code which will redirect them to the BrightID mobile app for approval. This is done by first assigning a contextID ( using uuidv4 ) and generating a deep link with it. This link is, in turn, encoded as a QR code using the QRious JS library.
 
 4. The 'RESOURCES' page of Avasky can be used to get access to custom resources using BrightID. I chose BrightID because of the potential I believe it has and because it fits to the vision I have for Avasky. It can be an identity verification solution, as well as a means to socializing and granting access to various resources by virtue of the aforementioned system.
